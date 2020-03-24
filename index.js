@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
   const chart = document.getElementById("chart");
   let circles, xScale, yScale, rScale;
   const margin = 30, rValues = [2,15];
-  const svg = d3.select("#chart")
+  let svg = d3.select("#chart")
     .append('svg')
     .attr('width', "100%")
     .attr('height', "100%")
   
-  const chartWidth = parseInt(window.getComputedStyle(chart).width)
-  const chartHeight = parseInt(window.getComputedStyle(chart).height)
+  const chartWidth = parseInt(window.getComputedStyle(chart).width);
+  const chartHeight = parseInt(window.getComputedStyle(chart).height);
 
   d3.csv('boston-housing.csv').then( (data) => {
     data = data.sort( (a,b) => a.charles - b.charles )
@@ -18,19 +18,19 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     xScale = d3.scaleLinear()
       .domain([xMinMax[1], xMinMax[0]])
-      .range([margin + rValues[1] + 5, chartWidth - margin - rValues[1] - 5])
+      .range([margin + rValues[1] + 5, chartWidth - margin - rValues[1] - 5]);
 
     yScale = d3.scaleLinear()
       .domain([yMinMax[1], yMinMax[0]])
-      .range([margin + rValues[1], chartHeight - margin - rValues[1]])
+      .range([margin + rValues[1], chartHeight - margin - rValues[1]]);
     
     rScale = d3.scaleLinear()
       .domain([rMinMax[0], rMinMax[1]])
-      .range(rValues)
+      .range(rValues);
 
     const cScale = d3.scaleOrdinal()
       .domain([0, 1])
-      .range(['#333', '#FF6600']); 
+      .range(['#333', '#F53005']); 
 
     circles = svg.selectAll(".dot")
       .data(data)
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
       .attr("id", 'xAxis')
       .attr("class", 'axis')
       .call(xAxis)
-      .attr("transform", `translate(0,${chartHeight - margin})`)
+      .attr("transform", `translate(0,${chartHeight - margin})`);
 
     const yAxisG = svg.append('g')
       .attr("id", 'yAxis')
@@ -92,6 +92,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     update();
   });
+
+  window.addEventListener("resize", (e) => {
+    location.reload();
+  })
 
   function update() {
     circles.transition()

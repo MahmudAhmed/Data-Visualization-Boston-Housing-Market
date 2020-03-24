@@ -5,11 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet">
+    <link href="./canvas/style.css" rel="stylesheet">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="./index.js"></script>
+    <script src="./canvas/canvas.js"></script>
   </head>
   <body>
-    <div id="chart"></div>
-    <div id="tooltip"></div>
+    <main id="main">
+      <div class="text-container">
+        <h1>Boston Housing Data</h1>
+        <p>An interactive visualization of Boston housing data.</p>
+        <p>Value is the value of owner-occupied homes in $1000s.</p>
+        <p>Charles River dummy variable (= 1 if tract bounds river; 0 otherwise).</p>
+      </div>
+      <div id="chart"></div>
+      <div id="tooltip"></div>
+    </main>
+    <canvas></canvas>
+
   </body>
 </html>
