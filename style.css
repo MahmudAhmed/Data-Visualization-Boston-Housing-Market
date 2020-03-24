@@ -1,5 +1,5 @@
 body {
-  background-color: #ccc;
+  background-color: #084056;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -12,21 +12,24 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  /* background-color: #F53005;
+  opacity: 0.3; */
 }
 
 .text-container{
   width: 90vw;
   max-width: 1000px;
   text-align: center;
-  color: black;
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }
 
 .text-container h1{
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+  color: #F53005;
   font-size: 50px;
 }
 
 .text-container p{
+  color: white;
   line-height: 10px;
 }
 
@@ -37,11 +40,11 @@ body {
   height: 500px;
   margin: 50px auto;
   border: 1px solid black;
-  /* position: absolute; */
+
 }
 
 svg{
-  background-color: white;
+  background-color: #188367
 }
 
 .dot{
