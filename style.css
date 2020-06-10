@@ -2,6 +2,8 @@ body {
   background-color: #084056;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+
 }
 
 #main{
